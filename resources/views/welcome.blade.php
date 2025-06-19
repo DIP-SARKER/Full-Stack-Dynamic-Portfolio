@@ -14,24 +14,28 @@
 <nav class="navbar">
     <div class="nav-container">
       <a href="#" class="logo">DIP SARKER</a>
-      <ul class="nav-links">
-        <li><a href="#about">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
+      <ul class="navlinks">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Skills</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- Hero Section -->
   <header class="hero">
+    <div class="hero-image">
     <img 
       src="https://dip-sarker.github.io/DIP_SARKER/images/home.png" 
       alt="Profile Photo" 
       class="profile-photo"
     />
-    <h1>DIP SARKER</h1>
-    <p class="tagline">Frontend Developer • Designer • Tech Enthusiast</p>
+    </div>
+    
+    <h1 id="animated-text">DIP SARKER</h1>
+    <p class="tagline"> CSE Student • Software Developer • Tech Enthusiast</p>
   </header>
 
   <main class="content">

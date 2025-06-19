@@ -38,20 +38,20 @@
     text-decoration: none;
   }
   
-  .nav-links {
+  .navlinks {
     list-style: none;
     display: flex;
     gap: 20px;
   }
   
-  .nav-links a {
+  .navlinks a {
     color: #ecf0f1;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.2s ease;
   }
   
-  .nav-links a:hover {
+  .navlinks a:hover {
     color: #1abc9c;
   }
   
@@ -97,6 +97,11 @@
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  section:hover {
+    width: 1000px;
+    height: max-content;
   }
   
   h2 {
