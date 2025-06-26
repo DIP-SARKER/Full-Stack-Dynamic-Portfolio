@@ -5,16 +5,7 @@ for (let i = 0; i < menu.length; i++) {
         console.log(event.target.innerText);
     });
 }
-
-
-
-
-const bigText = document.getElementById("animated-text");
-
-bigText.addEventListener("mouseover", function(event) {
-    bigText.style.fontSize = "50px";
-});
-
-bigText.addEventListener("mouseout", function(event) {
-    bigText.style.fontSize= "2rem";
-});
+window.addEventListener('scroll', function() {
+    console.log('User is scrolling!');
+  });
+  
