@@ -51,7 +51,7 @@ function createCodeRain() {
     // const symbols = ["ｱ", "ﾘ", "ｷ", "ｻ", "ﾀ", "ﾃ", "ﾎ", "ﾓ", "ﾕ", "ﾜ"];
     const symbols = ["∆", "≠", "∑", "λ", "Ω", "π", "∞", "√", "µ"];
 
-    const rainCount = 100;
+    const rainCount = 50;
 
     for (let i = 0; i < rainCount; i++) {
         const digit = document.createElement("div");
@@ -70,6 +70,57 @@ function createCodeRain() {
 }
 document.addEventListener("DOMContentLoaded", createCodeRain);
 
+//preloader
+const preloader = document.getElementById("preloader");
+const mainContent = document.querySelector(".web-content");
+
+function simulateLoading() {
+    const progressBar = document.getElementById("progressBar");
+    const loadingText = document.getElementById("loadingText");
+
+    if (!progressBar || !loadingText) return;
+
+    const messages = [
+        "Warming up the brain cells...",
+        "Crafting first impressions in HTML & CSS...",
+        "Injecting creativity into every line...",
+        "Building bridges between logic & art...",
+        "Almost there — igniting final touches...",
+        "Portfolio ready. Entering DIP’s arena...",
+    ];
+
+    let progress = 0;
+    const interval = setInterval(() => {
+        progress += Math.random() * 18;
+        if (progress >= 100) {
+            progress = 100;
+            clearInterval(interval);
+            setTimeout(() => {
+                if (preloader) preloader.style.display = "none";
+                if (mainContent) mainContent.style.display = "block";
+            }, 1000);
+        }
+
+        progressBar.style.width = `${progress}%`;
+
+        if (progress > 20 && progress < 30)
+            loadingText.textContent = messages[1];
+        else if (progress > 40 && progress < 50)
+            loadingText.textContent = messages[2];
+        else if (progress > 60 && progress < 70)
+            loadingText.textContent = messages[3];
+        else if (progress > 80 && progress < 90)
+            loadingText.textContent = messages[4];
+        else if (progress >= 99) loadingText.textContent = messages[5];
+    }, 300);
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+    if (mainContent) mainContent.style.display = "none";
+    if (preloader) preloader.style.display = "flex";
+    simulateLoading();
+});
+
 // terminal
 
 const terminalOutput = document.getElementById("terminalOutput");
@@ -77,23 +128,23 @@ const toggleBtn = document.getElementById("toggleBtn");
 const restartBtn = document.getElementById("restartBtn");
 
 const codeLines = [
-    `<span class="comment">// 🚀 Booting up Dip’s Portfolio Engine</span>`,
-    `<span class="keyword">import</span> <span class="default">React</span> <span class="keyword">from</span> <span class="string">'react'</span><span class="symbol">;</span>`,
-    `<span class="keyword">import</span> <span class="default">AI</span> <span class="keyword">from</span> <span class="string">'./utils/chatgpt.js'</span><span class="symbol">;</span>`,
-    `<span class="function">console</span>.<span class="method">log</span>(<span class="string">'🧠 Initializing neural modules...'</span>)<span class="symbol">;</span>`,
-    `<span class="keyword">const</span> <span class="variable">user</span> = <span class="function">loadUser</span>(<span class="string">'dip_sarker.dev'</span>)<span class="symbol">;</span>`,
-    `<span class="keyword">await</span> <span class="function">connectToDB</span>(<span class="string">'cluster0.mongodb.net/portfolio'</span>)<span class="symbol">;</span>`,
-    `<span class="keyword">if</span> (<span class="symbol">!</span><span class="variable">user</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="class">Error</span>(<span class="string">'User not found ⚠️'</span>)<span class="symbol">;</span>`,
-    `<span class="function">preloadAssets</span>([<span class="string">'projects'</span>, <span class="string">'testimonials'</span>, <span class="string">'contact'</span>])<span class="symbol">;</span>`,
-    `<span class="function">renderComponent</span>(<span class="string">'<HeroSection />'</span>)<span class="symbol">;</span>`,
-    `<span class="function">console</span>.<span class="method">info</span>(<span class="string">'✨ Interface is ready. Deploying animations...'</span>)<span class="symbol">;</span>`,
-    `<span class="keyword">let</span> <span class="variable">ping</span> = <span class="function">setInterval</span>(<span class="function">heartbeat</span>, <span class="number">1000</span>)<span class="symbol">;</span>`,
-    `<span class="comment">// 📡 Live telemetry streaming from Dip’s brain</span>`,
-    `<span class="function">startService</span>(<span class="string">'project-highlighter'</span>)<span class="symbol">;</span>`,
-    `<span class="function">console</span>.<span class="method">log</span>(<span class="string">'🛠️  Running diagnostics...'</span>)<span class="symbol">;</span>`,
-    `<span class="function">validateUX</span>(<span class="symbol">()</span> => <span class="string">'🔥 User engagement optimal'</span>)<span class="symbol">;</span>`,
-    `<span class="comment">// ✅ Everything is running smoother than expected</span>`,
-    `<span class="function">console</span>.<span class="method">info</span>(<span class="string">'✅ Portfolio is live at https://dip-sarker.dev'</span>)<span class="symbol">;</span>`,
+    `<span class="comment">// 🚀 Launch sequence initiated: Dip Sarker’s Portfolio v2.5</span>`,
+    `<span class="keyword">import</span> <span class="default">NextGenUI</span> <span class="keyword">from</span> <span class="string">'./components/HeroSection'</span><span class="symbol">;</span>`,
+    `<span class="keyword">import</span> <span class="default">GPTSupport</span> <span class="keyword">from</span> <span class="string">'./utils/ai-assist.js'</span><span class="symbol">;</span>`,
+    `<span class="function">console</span>.<span class="method">log</span>(<span class="string">'🧠 Activating intelligent UI systems...'</span>)<span class="symbol">;</span>`,
+    `<span class="keyword">const</span> <span class="variable">visitor</span> = <span class="function">initializeUserSession</span>(<span class="string">'dip-sarker.dev'</span>)<span class="symbol">;</span>`,
+    `<span class="keyword">await</span> <span class="function">connectDatabase</span>(<span class="string">'portfolioCluster.mongodb.net'</span>)<span class="symbol">;</span>`,
+    `<span class="keyword">if</span> (<span class="symbol">!</span><span class="variable">visitor</span>) <span class="keyword">throw</span> <span class="keyword">new</span> <span class="class">AccessError</span>(<span class="string">'Unrecognized visitor - Access Denied 🛑'</span>)<span class="symbol">;</span>`,
+    `<span class="function">loadModules</span>([<span class="string">'Projects'</span>, <span class="string">'Skills'</span>, <span class="string">'ContactForm'</span>])<span class="symbol">;</span>`,
+    `<span class="function">renderComponent</span>(<span class="string">'<IntroBanner animated />'</span>)<span class="symbol">;</span>`,
+    `<span class="function">console</span>.<span class="method">info</span>(<span class="string">'🎨 Designing with personality and precision...'</span>)<span class="symbol">;</span>`,
+    `<span class="keyword">let</span> <span class="variable">heartbeat</span> = <span class="function">setInterval</span>(<span class="function">pingVisitor</span>, <span class="number">1200</span>)<span class="symbol">;</span>`,
+    `<span class="comment">// 🧭 Mapping your journey through skills, projects, and passion</span>`,
+    `<span class="function">startService</span>(<span class="string">'realTimeHighlights'</span>)<span class="symbol">;</span>`,
+    `<span class="function">console</span>.<span class="method">log</span>(<span class="string">'🧪 Running accessibility & performance diagnostics...'</span>)<span class="symbol">;</span>`,
+    `<span class="function">checkEngagement</span>(<span class="symbol">()</span> => <span class="string">'📈 Metrics looking strong — users are loving it!'</span>)<span class="symbol">;</span>`,
+    `<span class="comment">// ✅ Systems green — portfolio engine stable & optimized</span>`,
+    `<span class="function">console</span>.<span class="method">info</span>(<span class="string">'✅ Deployed successfully at https://dip-sarker.dev'</span>)<span class="symbol">;</span>`,
 ];
 
 let index = 0;
@@ -139,138 +190,3 @@ toggleBtn.addEventListener("click", toggleSimulation);
 restartBtn.addEventListener("click", restartSimulation);
 
 startSimulation(); // Auto start on load
-
-//weofgtoerktgf
-document.addEventListener("DOMContentLoaded", function () {
-    const container = document.getElementById("projectsContainer");
-    const prevBtn = document.getElementById("prevBtn");
-    const nextBtn = document.getElementById("nextBtn");
-    const progressBar = document.getElementById("projectProgressBar");
-    const indicators = document.querySelectorAll(".indicator");
-    const cards = container.querySelectorAll(".project-card");
-    const cardCount = cards.length;
-    let currentIndex = 0; // Start with center card active
-    let autoScrollInterval;
-    let progress = 0;
-    const scrollDuration = 3000; // 5 seconds
-
-    // Add margins to first and last cards
-    cards[0].style.marginLeft = "100px";
-    cards[cardCount - 1].style.marginRight = "100px";
-
-    // Initialize carousel
-    centerActiveCard();
-
-    // Function to center the active card
-    function centerActiveCard() {
-        // Remove active class from all cards
-        cards.forEach((card) => card.classList.remove("active"));
-
-        // Add active class to current card
-        cards[currentIndex].classList.add("active");
-
-        // Update indicators
-        indicators.forEach((indicator, index) => {
-            indicator.classList.toggle("active", index === currentIndex);
-        });
-
-        // Calculate container padding to center active card
-        const containerWidth = container.offsetWidth;
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 50; // Same as CSS gap
-
-        // Calculate the total offset caused by the first card's margin
-        const marginOffset = 100;
-
-        // Calculate scroll position to perfectly center the active card
-        // Accounting for the 100px left margin on the first card
-        const scrollPosition =
-            marginOffset +
-            (cardWidth + gap) * currentIndex -
-            (containerWidth / 2 - cardWidth / 2);
-
-        container.scrollTo({
-            left: scrollPosition,
-            behavior: "smooth",
-        });
-    }
-
-    // Function to go to next card
-    function nextCard() {
-        currentIndex = (currentIndex + 1) % cardCount;
-        centerActiveCard();
-
-        // Reset progress bar
-        progress = 0;
-        progressBar.style.width = "0%";
-    }
-
-    // Function to go to previous card
-    function prevCard() {
-        currentIndex = (currentIndex - 1 + cardCount) % cardCount;
-        centerActiveCard();
-
-        // Reset progress bar
-        progress = 0;
-        progressBar.style.width = "0%";
-    }
-
-    // Function to update progress bar
-    function updateProgressBar() {
-        progress += 100 / (scrollDuration / 100);
-        progressBar.style.width = `${progress}%`;
-
-        if (progress >= 100) {
-            nextCard();
-        }
-    }
-
-    // Start auto-scroll
-    function startAutoScroll() {
-        autoScrollInterval = setInterval(updateProgressBar, 100);
-    }
-
-    // Stop auto-scroll when user interacts
-    function stopAutoScroll() {
-        clearInterval(autoScrollInterval);
-        progressBar.style.width = "0%";
-    }
-
-    // Resume auto-scroll after user interaction
-    function resumeAutoScroll() {
-        startAutoScroll();
-    }
-
-    // Event listeners
-    prevBtn.addEventListener("click", function () {
-        stopAutoScroll();
-        prevCard();
-        setTimeout(resumeAutoScroll, 5000);
-    });
-
-    nextBtn.addEventListener("click", function () {
-        stopAutoScroll();
-        nextCard();
-        setTimeout(resumeAutoScroll, 5000);
-    });
-
-    // Indicator click events
-    indicators.forEach((indicator) => {
-        indicator.addEventListener("click", function () {
-            stopAutoScroll();
-            currentIndex = parseInt(this.getAttribute("data-index"));
-            centerActiveCard();
-            setTimeout(resumeAutoScroll, 5000);
-        });
-    });
-
-    // Pause auto-scroll when hovering over carousel
-    container.addEventListener("mouseenter", stopAutoScroll);
-    container.addEventListener("mouseleave", resumeAutoScroll);
-
-    // Start auto-scroll on page load
-    startAutoScroll();
-
-    // Recenter on window resize
-    window.addEventListener("resize", centerActiveCard);
-});

@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @stack('style')
     
     <!-- Link CSS -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/test.css') }}">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -16,14 +15,15 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-</head>
-<body>
-    
+  </head>
+  <body>
     <!-- Header -->
     <header id="header">
       <div class="container">
         <nav>
-          <a href="#home" class="logo"><img src="{{ asset('assets/images/logo.png') }}" alt="Logo"></a>
+          <a href="#home" class="logo">
+            <img src="" alt="Logo"/>
+          </a>
           <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -31,33 +31,30 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li>
-              <button
-                class="theme-toggle"
-                id="themeToggle"
-                title="Swap Theme"
-              >
-                <i class="fas fa-moon"></i>
-              </button>
-            </li>
+            
           </ul>
+          <button class="theme-toggle" id="themeToggle" title="Swap Theme">
+            <i class="fas fa-moon"></i>
+          </button>
           <div class="mobile-menu">
             <i class="fas fa-bars"></i>
           </div>
         </nav>
+        <div class="mobile-menu-items" id="mobile-menu-items">
+          <a href="#home" class="active">Home</a>
+          <a href="#about">About</a>
+          <a href="#education">Education</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
       </div>
       <div class="scroll-progress" id="scroll-progress"></div>
     </header>
-
-    {{-- <div class="mobile-menu" id="mobile-menu">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div> --}}
 @yield('main-content')
-<div class="bg-rain" id="bgRain"></div>
+
+    <!-- Background Rain -->
+    <div class="bg-rain" id="bgRain"></div>
 
     <!-- Footer -->
     <footer>
@@ -70,16 +67,40 @@
               experiences that make a difference.
             </p>
             <div class="social-btn footer-btn">
-              <a href="https://drive.google.com/file/d/1TpLjBllEDzLKQLBidjpwkzop3wHa2-gh/view?usp=sharing" target="_blank" class="sbtn f-btn"
-            ><i class="fas fa-download"></i></a>
-              <a class="sbtn f-btn" href="https://www.linkedin.com/in/dip-sarker-3ba1b9321/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-              <a class="sbtn f-btn" href="https://github.com/DIP-SARKER" target="_blank"><i class="fab fa-github"></i></a>
-              <a class="sbtn f-btn" href="https://x.com/NiloyDs" target="_blank"><i class="fab fa-twitter"></i></a>
-              <a class="sbtn f-btn"
+              <a
+                href="https://drive.google.com/file/d/1TpLjBllEDzLKQLBidjpwkzop3wHa2-gh/view?usp=sharing"
+                target="_blank"
+                class="sbtn f-btn"
+                ><i class="fas fa-download"></i
+              ></a>
+              <a
+                class="sbtn f-btn"
+                href="https://www.linkedin.com/in/dip-sarker-3ba1b9321/"
+                target="_blank"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a
+                class="sbtn f-btn"
+                href="https://github.com/DIP-SARKER"
+                target="_blank"
+                ><i class="fab fa-github"></i
+              ></a>
+              <a class="sbtn f-btn" href="https://x.com/NiloyDs" target="_blank"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                class="sbtn f-btn"
                 href="https://www.facebook.com/dipsarkerniloy/"
-                target="_blank">
-                <i class="fab fa-facebook-f"></i></a>
-              <a class="sbtn f-btn" href="https://www.instagram.com/dipsarkerniloy/" target="_blank"><i class="fab fa-instagram"></i></a>
+                target="_blank"
+              >
+                <i class="fab fa-facebook-f"></i
+              ></a>
+              <a
+                class="sbtn f-btn"
+                href="https://www.instagram.com/dipsarkerniloy/"
+                target="_blank"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
           </div>
 
@@ -105,8 +126,12 @@
     <div class="cursor-follower"></div>
     
     <!-- Link JS -->
+    <script>
+      const logoDark = "{{ asset('assets/images/logoDark.png') }}";
+      const logoLight = "{{ asset('assets/images/logoLight.png') }}";
+    </script>
     <script src="{{ asset('assets/js/script.js') }}"></script>
     <script src="{{ asset('assets/js/app.js') }}"></script>
-    <script src="{{ asset('assets/js/terminal.js') }}"></script>
-</body>
+
+  </body>
 </html>
