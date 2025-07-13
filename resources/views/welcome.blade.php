@@ -33,6 +33,10 @@
     <div class="web-content">
       <!-- Hero Section -->
       <section class="hero" id="home">
+        <div class="floating"></div>
+        <div class="floating"></div>
+        <div class="floating"></div>
+        <div class="floating"></div>
         <div class="container">
           <div class="hero-container fade-in">
             <div class="hero-content">
@@ -119,7 +123,7 @@
       <section class="about" id="about">
         <div class="container">
           <div class="section-title fade-in">
-            <h2>About Me</h2>
+            <h2>Origin Story</h2>
           </div>
           <div class="about-content">
             <div class="about-text fade-in">

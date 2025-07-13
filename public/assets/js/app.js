@@ -116,9 +116,9 @@ function simulateLoading() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    if (mainContent) mainContent.style.display = "none";
-    if (preloader) preloader.style.display = "flex";
-    simulateLoading();
+    // if (mainContent) mainContent.style.display = "none";
+    // if (preloader) preloader.style.display = "flex";
+    // simulateLoading();
 });
 
 // terminal
