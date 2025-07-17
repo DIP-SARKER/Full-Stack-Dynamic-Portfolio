@@ -1,0 +1,15 @@
+git clone https://github.com/DIP-SARKER/Full-Stack-Dynamic-Portfolio.git
+git config user.name DIP-SARKER
+git config user.email sarker15-5274@diu.edu.bd
+git config --list
+
+
+composer global require laravel/installer
+
+composer update
+
+copy.env.example .env
+
+php artisan key:generate
+
+php artisan migrate
