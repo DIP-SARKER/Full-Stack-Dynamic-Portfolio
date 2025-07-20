@@ -1,20 +1,16 @@
 // Theme Toggle Functionality
 const themeToggle = document.getElementById("themeToggle");
-const logo = document.querySelector(".logo img");
 const body = document.body;
 
 // Check for saved theme preference or respect OS preference
 const savedTheme = localStorage.getItem("theme");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-// Helper to update theme icon and logo
+// Helper to update theme icon
 function updateThemeUI(isDark) {
     themeToggle.innerHTML = isDark
         ? '<i class="fas fa-sun"></i>'
         : '<i class="fas fa-moon"></i>';
-    if (logo) {
-        logo.src = isDark ? logoLight : logoDark;
-    }
 }
 
 // Set initial theme

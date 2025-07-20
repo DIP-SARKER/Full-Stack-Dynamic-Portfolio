@@ -1,0 +1,10 @@
+php artisan make:migration create_users_table   [create-migrations]
+
+
+php artisan migrate [create]
+
+
+php artisan migrate --pretend [drop & recreate]
+
+
+php artisan migrate:fresh [drop & recreate]
