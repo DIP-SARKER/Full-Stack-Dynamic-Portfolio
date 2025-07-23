@@ -24,8 +24,7 @@
             <nav>
                 <a href="#home" class="logo" title="Forged in passion, refined with soul 💜">
                     <svg id="logo-svg" class="logo-svg" xmlns="http://www.w3.org/2000/svg" width="80"
-                        fill="currentColor" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 947.58 553.27">
+                        fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 947.58 553.27">
                         <path
                             d="M785.4,0c-1.9,0-3.79.03-5.68.1h-124.01c-13.81,0-25.01,11.2-25.01,25.01v345.54c0,13.81,11.2,25.01,25.01,25.01h107.04c13.81,0,25.01-11.2,25.01-25.01v-46.32c88.48-1.26,159.81-73.38,159.81-162.16S874.97,0,785.4,0ZM787.77,248.1c-46.14,0-83.54-37.4-83.54-83.54s37.4-83.55,83.54-83.55,83.55,37.41,83.55,83.55-37.41,83.54-83.55,83.54Z" />
                         <rect x="402.22" y="196.94" width="164.56" height="356.33" rx="27.66" ry="27.66" />

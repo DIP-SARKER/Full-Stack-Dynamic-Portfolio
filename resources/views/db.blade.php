@@ -121,13 +121,13 @@
     <header id="header">
         <nav>
             <ul class="db-nav-links">
-                <li><a href="{{ route('users.index') }}">Users</a></li>
-                <li><a href="{{ route('personal.details') }}">Personal Details</a></li>
-                <li><a href="{{ route('skills.index') }}">Skills</a></li>
-                <li><a href="{{ route('educations.index') }}">Education</a></li>
-                <li><a href="{{ route('projects.index') }}">Projects</a></li>
-                <li><a href="{{ route('achievements.index') }}">Achievements</a></li>
-                <li><a href="{{ route('experiences.index') }}">Experiences</a></li>
+                <li><a href="{{ route('user.index') }}">Users</a></li>
+                <li><a href="{{ route('personal_detail.index') }}">Personal Details</a></li>
+                <li><a href="{{ route('skill.index') }}">Skills</a></li>
+                <li><a href="{{ route('education.index') }}">Education</a></li>
+                <li><a href="{{ route('project.index') }}">Projects</a></li>
+                <li><a href="{{ route('achievement.index') }}">Achievements</a></li>
+                <li><a href="{{ route('experience.index') }}">Experiences</a></li>
             </ul>
         </nav>
     </header>
