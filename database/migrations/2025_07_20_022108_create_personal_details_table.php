@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
        Schema::create('personal_details', function (Blueprint $table) {
-            $table->id(); // Primary Key
+            $table->id();
             $table->unsignedBigInteger('user_id');
             $table->text('description')->nullable();
             $table->string('blood_group', 3)->nullable();
@@ -23,10 +23,15 @@ return new class extends Migration
             $table->enum('gender', ['male', 'female', 'Not Specified'])->default('Not Specified');
             $table->timestamps();
 
-            // Foreign Key Constraint
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
-
+        
+        Schema::table('personal_details', function (Blueprint $table) {
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
+        });
 
     }
 

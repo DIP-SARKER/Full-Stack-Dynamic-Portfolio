@@ -8,7 +8,7 @@ composer global require laravel/installer
 
 composer update
 
-copy.env.example .env
+copy .env.example .env
 
 php artisan key:generate
 

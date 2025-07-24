@@ -9,12 +9,18 @@ return new class extends Migration {
     {
         Schema::create('logs', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
             $table->string('action');
-            $table->unsignedBigInteger('user_id')->nullable();
             $table->text('details')->nullable();
             $table->timestamps();
+        });
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+        Schema::table('logs', function (Blueprint $table) {
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
         });
     }
 
