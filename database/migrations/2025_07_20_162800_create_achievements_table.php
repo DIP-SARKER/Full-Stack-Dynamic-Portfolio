@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('achievements', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->enum('type', ['award', 'certification', 'recognition']);
             $table->string('certification')->nullable();
@@ -17,6 +17,14 @@ return new class extends Migration {
             $table->json('images')->nullable();
             $table->enum('category', ['academic', 'professional', 'other']);
             $table->timestamps();
+        });
+        
+        Schema::table('achievements', function (Blueprint $table) {
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
         });
     }
 

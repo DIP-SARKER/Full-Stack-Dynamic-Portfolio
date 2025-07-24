@@ -8,7 +8,7 @@ return new class extends Migration {
     public function up(): void {
         Schema::create('experiences', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id'); // define the user_id column
             $table->enum('type', ['job', 'internship', 'freelance', 'volunteer']);
             $table->string('designation');
             $table->string('organization');
@@ -16,10 +16,17 @@ return new class extends Migration {
             $table->date('to_date')->nullable();
             $table->timestamps();
         });
+
+        Schema::table('experiences', function (Blueprint $table) {
+            $table->foreign('user_id')
+                  ->references('id')
+                  ->on('users')
+                  ->onUpdate('cascade')
+                  ->onDelete('cascade');
+        });
     }
 
     public function down(): void {
         Schema::dropIfExists('experiences');
     }
 };
-
